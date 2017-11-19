@@ -1,8 +1,8 @@
 module.change_code = 1;
 'use strict';
 
-var alexa = require( 'alexa-app' );
-var app = new alexa.app( 'avempace_skill' );
+var alexa = require('alexa-app');
+var app = new alexa.app('avempace');
 
 
 app.launch( function( request, response ) {
