@@ -5,8 +5,6 @@ var AlexaAppServer = require( 'alexa-app-server' );
 
 var CheckServer = function() {
    console.log("Check server working");
-
-    });
 }
 
 var server = new AlexaAppServer( {
