@@ -3,6 +3,20 @@ module.change_code = 1;
 
 var alexa = require('alexa-app');
 var app = new alexa.app('avempace');
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://abkerkeni:kerkeni83@ds113906.mlab.com:13906/avempace_db', { useMongoClient: true });
+mongoose.Promise = global.Promise;
+
+var Cat = mongoose.model('Cat', { name: String });
+
+var kitty = new Cat({ name: 'Zildjian' });
+kitty.save(function (err) {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log('meow');
+  }
+});
 
 
 app.launch( function( request, response ) {

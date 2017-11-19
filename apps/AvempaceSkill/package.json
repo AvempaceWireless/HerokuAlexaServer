@@ -12,7 +12,8 @@
   ],
   "dependencies": {
   "express": "^4.16.2",
-  "alexa-app": "^4.2.0"
+  "alexa-app": "^4.2.0",
+  "mongoose": "^4.13.4"
   },
   "author": "Abdelhamid Kerkeni",
   "license": "MIT"
