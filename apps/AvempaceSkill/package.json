@@ -1,0 +1,19 @@
+{
+  "name": "avempace_skill",
+  "version": "1.0.0",
+  "description": "Avempace Skill",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "keywords": [
+    "Alexa",
+    "Skill"
+  ],
+  "dependencies": {
+  "express": "^4.16.2",
+  "alexa-app": "^4.2.0"
+  },
+  "author": "Abdelhamid Kerkeni",
+  "license": "MIT"
+}
