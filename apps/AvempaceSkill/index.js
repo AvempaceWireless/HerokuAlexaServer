@@ -10,11 +10,32 @@ mongoose.Promise = global.Promise;
 var Cat = mongoose.model('Cat', { name: String });
 
 var kitty = new Cat({ name: 'Zildjian' });
-kitty.save(function (err) {
-  if (err) {
-    console.log(err);
-  } else {
-    console.log('meow');
+var query = Cat.find(null);
+query.where('name', 'Zildjian');
+query.limit(1);
+// peut s'écrire aussi query.where('pseudo', 'Atinux').limit(3);
+query.exec(function (err, comms) {
+  if (err) { throw err; }
+  // On va parcourir le résultat et les afficher joliment
+  var comm;
+  var catfound = false;
+  for (var i = 0, l = comms.length; i < l; i++) {
+    comm = comms[i];
+    console.log('------------------------------');
+    console.log('Pseudo : ' + comm.name);
+    console.log('------------------------------');
+	catfound = true;
+  }
+  
+  if(!catfound)
+  {
+		kitty.save(function (err) {
+				  if (err) {
+					console.log(err);
+				  } else {
+					console.log('meow');
+				  }
+		});  
   }
 });
 
